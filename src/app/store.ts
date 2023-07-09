@@ -3,9 +3,10 @@
 import {AnyAction, applyMiddleware, combineReducers, legacy_createStore} from "redux";
 import thunkMiddleware, {ThunkDispatch} from "redux-thunk";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
+import {CardReducer} from "../store/card-reducer";
 
 const rootReducer = combineReducers({
-
+card: CardReducer
 })
 
 export const store = legacy_createStore(rootReducer, applyMiddleware(thunkMiddleware));
